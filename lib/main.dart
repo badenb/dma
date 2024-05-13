@@ -7,6 +7,7 @@ const messagePrimaryColor = Colors.blueAccent;
 
 void main() async {
   const userId = 'UID1';
+  const userToken = '';
 
   final client = StreamChatClient(
     'nvgjt8sjsamj',
@@ -19,8 +20,10 @@ void main() async {
 
   await client.connectUser(
     currentUser,
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVUlEMSJ9.6rEPuCfPI2bIwr8Y1wNux8qEoWtlLQmNKca_0fyPXnc',
+    userToken,
   );
+
+  client.disconnectUser();
 
   final channel = client.channel('messaging', id: 'chat-with-admin-2');
 
