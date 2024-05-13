@@ -6,16 +6,20 @@ const backgroundColor = Color(0xff121416);
 const messagePrimaryColor = Colors.blueAccent;
 
 void main() async {
-  const userId = 'UID1';
+  const streamApiKey = '';
+  const streamApiSecret = '';
+  const userId = '';
+  const username = '';
   const userToken = '';
+  const theOtherGuy = {};
 
   final client = StreamChatClient(
-    'nvgjt8sjsamj',
+    streamApiKey,
     logLevel: Level.INFO,
   );
 
   final currentUser = User(id: userId, extraData: const {
-    'name': 'John Doe',
+    'name': username,
   });
 
   await client.connectUser(
@@ -23,15 +27,16 @@ void main() async {
     userToken,
   );
 
-  client.disconnectUser();
-
-  final channel = client.channel('messaging', id: 'chat-with-admin-2');
+  final channel = client.channel('messaging', id: 'private-chat-$userId-$theOtherGuy', extraData: {
+    'name': 'Private Chat',
+    'members': [userId],
+  });
 
   await channel.watch();
   await channel.addMembers([userId]);
 
   runApp(
-    DmApp(client: client,),
+    DmApp(client: client),
   );
 }
 
