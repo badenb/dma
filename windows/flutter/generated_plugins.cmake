@@ -7,6 +7,8 @@ list(APPEND FLUTTER_PLUGIN_LIST
   dart_vlc
   desktop_drop
   file_selector_windows
+  firebase_auth
+  firebase_core
   share_plus
   thumblr_windows
   url_launcher_windows

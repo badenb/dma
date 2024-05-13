@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 const backgroundColor = Color(0xff121416);
 const messagePrimaryColor = Colors.blueAccent;
 
 void main() async {
-  const streamApiKey = '';
+  const streamApiKey = 'uhfx452bn48j';
   const streamApiSecret = '';
-  const userId = '';
-  const username = '';
-  const userToken = '';
-  const theOtherGuy = {};
+  const userId = 'UUID1';
+  const username = 'John Doe';
+  const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVVVJRDEiLCJleHAiOjE3MTU2MzUzODZ9.oEpFxPYMp7QW9g4OufFKqBjCc9BB4NKK21lY6BJLPQA';
+  const theOtherGuy = {
+    'id': 'UUID2',
+    'name': 'Bobby Tables',
+  };
 
   final client = StreamChatClient(
     streamApiKey,
@@ -27,9 +32,8 @@ void main() async {
     userToken,
   );
 
-  final channel = client.channel('messaging', id: 'private-chat-$userId-$theOtherGuy', extraData: {
-    'name': 'Private Chat',
-    'members': [userId],
+  final channel = client.channel('messaging', id: "private-chat-$userId-${theOtherGuy['id']}", extraData: {
+    'name': theOtherGuy['name'],
   });
 
   await channel.watch();
@@ -37,6 +41,10 @@ void main() async {
 
   runApp(
     DmApp(client: client),
+  );
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
   );
 }
 
@@ -146,7 +154,7 @@ class _ChannelListPageState extends State<ChannelListPage> {
                 motion: const BehindMotion(),
                 children: [
                   CustomSlidableAction(
-                    backgroundColor: backgroundColor,
+                    backgroundColor: Colors.black26,
                     child: StreamSvgIcon.delete(
                       color: chatTheme.colorTheme.accentError,
                     ),
@@ -196,7 +204,7 @@ class ChannelPage extends StatelessWidget {
     return Scaffold(
       appBar: StreamChannelHeader(
         title: Text(
-          channel.id.toString(),
+          channel.name.toString(),
           style: const TextStyle(
             color: Colors.white,
           )

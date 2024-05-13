@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "744966174591",
+    "project_id": "direct-messaging-app",
+    "storage_bucket": "direct-messaging-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744966174591:android:04520cd7cc800205f98c4a",
+        "android_client_info": {
+          "package_name": "com.badenb.dma"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtK09jYM5dyKT174JkiepuZmf4lX0mw60"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
