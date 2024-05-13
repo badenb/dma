@@ -17,7 +17,7 @@ void main() async {
   runApp(DmApp(client: client));
 }
 
-class DmApp extends StatelessWidget {
+class DmApp extends StatefulWidget {
   const DmApp({
     super.key,
     required this.client,
@@ -26,7 +26,35 @@ class DmApp extends StatelessWidget {
   final StreamChatClient client;
 
   @override
+  _DmAppState createState() => _DmAppState();
+}
+
+class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+
+    if (state == AppLifecycleState.paused || state == AppLifecycleState.detached) {
+      widget.client.disconnectUser();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final client = widget.client;
+
     return MaterialApp(
       color: Colors.black,
       theme: ThemeData(
