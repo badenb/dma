@@ -14,26 +14,29 @@ void main() async {
 
   final client = await setupStreamChat();
 
-  runApp(DmApp(client: client));
+  runApp(DmApp(initialClient: client));
 }
 
 class DmApp extends StatefulWidget {
   const DmApp({
     super.key,
-    required this.client,
+    required this.initialClient,
   });
 
-  final StreamChatClient client;
+  final StreamChatClient initialClient;
 
   @override
   _DmAppState createState() => _DmAppState();
 }
 
 class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
+  late StreamChatClient _client;
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    _client = widget.initialClient;
   }
 
   @override
@@ -43,18 +46,22 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
   }
 
   @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
+  Future<void> didChangeAppLifecycleState(AppLifecycleState state) async {
     super.didChangeAppLifecycleState(state);
 
-    if (state == AppLifecycleState.paused || state == AppLifecycleState.detached) {
-      widget.client.disconnectUser();
+    if (state == AppLifecycleState.resumed) {
+      setupStreamChat().then((newClient) {
+        setState(() {
+          _client = newClient;
+        });
+      });
+    } else if (state == AppLifecycleState.paused || state == AppLifecycleState.detached) {
+      _client.disconnectUser();
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    final client = widget.client;
-
     return MaterialApp(
       color: Colors.black,
       theme: ThemeData(
@@ -67,7 +74,7 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
       ),
       builder: (context, widget) {
         return StreamChat(
-          client: client,
+          client: _client,
           streamChatThemeData: StreamChatThemeData(
             colorTheme: StreamColorTheme.dark(),
             textTheme: StreamTextTheme.dark(),
@@ -97,7 +104,7 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
           child: widget,
         );
       },
-      home: ChannelListPage(client: client),
+      home: ChannelListPage(client: _client),
     );
   }
 }

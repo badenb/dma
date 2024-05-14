@@ -13,81 +13,90 @@ class ChannelListPage extends StatefulWidget {
 }
 
 class _ChannelListPageState extends State<ChannelListPage> {
-  late final _listController = StreamChannelListController(
-    client: widget.client,
-    filter: Filter.in_('members', [StreamChat.of(context).currentUser!.id]),
-    channelStateSort: const [SortOption('last_message_at')],
-  );
+  late final StreamChannelListController _listController;
 
   @override
-  void dispose() {
-    _listController.dispose();
-    super.dispose();
+  void initState() {
+    super.initState();
+    final currentUser = StreamChat.of(context).currentUser;
+
+    if (currentUser != null) {
+      _listController = StreamChannelListController(
+        client: widget.client,
+        filter: Filter.in_('members', [currentUser.id]),
+        channelStateSort: const [SortOption('last_message_at')],
+      );
+    } else {
+      throw Exception('Current user is null');
+    }
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-    appBar: StreamChannelListHeader(
-      titleBuilder: (context, status, client) => const Text(
-        'Stream Chat',
-        style: TextStyle(
-          color: Colors.white,
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: StreamChannelListHeader(
+        titleBuilder: (context, status, client) => const Text(
+          'Stream Chat',
+          style: TextStyle(
+            color: Colors.white,
+          ),
         ),
       ),
-    ),
-    body: SlidableAutoCloseBehavior(
-      child: RefreshIndicator(
-        onRefresh: _listController.refresh,
-        child: StreamChannelListView(
-          controller: _listController,
-          itemBuilder: (context, channels, index, tile) {
-            final channel = channels[index];
-            final chatTheme = StreamChatTheme.of(context);
-            final canDeleteChannel = channel.ownCapabilities.contains(PermissionType.deleteChannel);
+      body: SlidableAutoCloseBehavior(
+        child: RefreshIndicator(
+          onRefresh: _listController.refresh,
+          child: StreamChannelListView(
+            controller: _listController,
+            itemBuilder: (context, channels, index, tile) {
+              final channel = channels[index];
+              final chatTheme = StreamChatTheme.of(context);
+              final canDeleteChannel = channel.ownCapabilities.contains(PermissionType.deleteChannel);
 
-            return Slidable(
-              groupTag: 'channels-actions',
-              endActionPane: ActionPane(
-                extentRatio: canDeleteChannel ? 0.40 : 0.20,
-                motion: const BehindMotion(),
-                children: [
-                  CustomSlidableAction(
-                    backgroundColor: Colors.black26,
-                    child: StreamSvgIcon.delete(
-                      color: chatTheme.colorTheme.accentError,
+              return Slidable(
+                groupTag: 'channels-actions',
+                endActionPane: ActionPane(
+                  extentRatio: canDeleteChannel ? 0.40 : 0.20,
+                  motion: const BehindMotion(),
+                  children: [
+                    CustomSlidableAction(
+                      backgroundColor: Colors.black26,
+                      child: StreamSvgIcon.delete(
+                        color: chatTheme.colorTheme.accentError,
+                      ),
+                      onPressed: (_) async {
+                        final res = await showConfirmationBottomSheet(
+                          context,
+                          title: 'Delete Conversation',
+                          question: 'Are you sure you want to delete this conversation?',
+                          okText: 'Delete',
+                          cancelText: 'Cancel',
+                          icon: StreamSvgIcon.delete(
+                            color: chatTheme.colorTheme.accentError,
+                          ),
+                        );
+                        if (res == true) {
+                          await _listController.deleteChannel(channel);
+                        }
+                      },
                     ),
-                    onPressed: (_) async {
-                      final res = await showConfirmationBottomSheet(
-                        context,
-                        title: 'Delete Conversation',
-                        question: 'Are you sure you want to delete this conversation?',
-                        okText: 'Delete',
-                        cancelText: 'Cancel',
-                        icon: StreamSvgIcon.delete(
-                          color: chatTheme.colorTheme.accentError,
-                        ),
-                      );
-                      if (res == true) {
-                        await _listController.deleteChannel(channel);
-                      }
-                    },
-                  ),
-                ],
-              ),
-              child: tile,
-            );
-          },
-          onChannelTap: (channel) => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => StreamChannel(
-                channel: channel,
-                child: ChannelPage(channel: channel),
+                  ],
+                ),
+                child: tile,
+              );
+            },
+            onChannelTap: (channel) => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => StreamChannel(
+                  channel: channel,
+                  child: ChannelPage(channel: channel),
+                ),
               ),
             ),
           ),
         ),
       ),
-    ),
-  );
+    );
+  }
+
 }

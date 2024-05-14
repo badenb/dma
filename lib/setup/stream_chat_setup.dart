@@ -5,7 +5,7 @@ Future<StreamChatClient> setupStreamChat() async {
   const streamApiSecret = '';
   const userId = 'UUID1';
   const username = 'John Doe';
-  const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVVVJRDEiLCJleHAiOjE3MTU2Mzc2Mzd9.ePwB9kJNdGDEn6NWMhzBPHKdfXtwTd_06VYr0HSGnKQ';
+  const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVVVJRDEiLCJleHAiOjE3MTU2OTMwNzB9.mN7dIYlbjnVjZ2szbu4mnAieO-fv-0k6LMQebs4vmbE';
   const theOtherGuy = {
     'id': 'UUID2',
     'name': 'Bobby Tables',
@@ -13,7 +13,7 @@ Future<StreamChatClient> setupStreamChat() async {
 
   final client = StreamChatClient(
     streamApiKey,
-    logLevel: Level.INFO,
+    logLevel: Level.ALL,
   );
 
   final currentUser = User(id: userId, extraData: const {
