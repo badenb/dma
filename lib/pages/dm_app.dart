@@ -14,13 +14,13 @@ class DmApp extends StatefulWidget {
 }
 
 class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
-  late StreamChatClient _client;
+  late Future<StreamChatClient> _clientFuture;
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    _initializeStreamChat();
+    _clientFuture = _initializeStreamChat();
   }
 
   @override
@@ -29,11 +29,8 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
     super.dispose();
   }
 
-  Future<void> _initializeStreamChat() async {
-    final client = await setupStreamChat();
-    setState(() {
-      _client = client;
-    });
+  Future<StreamChatClient> _initializeStreamChat() async {
+    return await setupStreamChat();
   }
 
   @override
@@ -41,57 +38,72 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
     super.didChangeAppLifecycleState(state);
 
     if (state == AppLifecycleState.resumed) {
-      _initializeStreamChat();
+      setState(() {
+        _clientFuture = _initializeStreamChat();
+      });
     } else if (state == AppLifecycleState.paused || state == AppLifecycleState.detached) {
-      _client.disconnectUser();
+      (await _clientFuture).disconnectUser();
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      color: Colors.black,
-      theme: ThemeData(
-        textSelectionTheme: TextSelectionThemeData(
-          cursorColor: messagePrimaryColor,
-          selectionColor: messagePrimaryColor.withOpacity(0.5),
-          selectionHandleColor: messagePrimaryColor,
-        ),
-        scaffoldBackgroundColor: backgroundColor,
-      ),
-      builder: (context, widget) {
-        return StreamChat(
-          client: _client,
-          streamChatThemeData: StreamChatThemeData(
-            colorTheme: StreamColorTheme.dark(),
-            textTheme: StreamTextTheme.dark(),
-            channelHeaderTheme: const StreamChannelHeaderThemeData(
-              titleStyle: TextStyle(
-                color: Colors.white,
+    return FutureBuilder<StreamChatClient>(
+      future: _clientFuture,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(messagePrimaryColor),
+          ));
+        } else {
+          final client = snapshot.data!;
+          return MaterialApp(
+            color: Colors.black,
+            theme: ThemeData(
+              textSelectionTheme: TextSelectionThemeData(
+                cursorColor: messagePrimaryColor,
+                selectionColor: messagePrimaryColor.withOpacity(0.5),
+                selectionHandleColor: messagePrimaryColor,
               ),
-              subtitleStyle: TextStyle(
-                color: Colors.white,
-              ),
+              scaffoldBackgroundColor: backgroundColor,
             ),
-            ownMessageTheme: const StreamMessageThemeData(
-              messageBackgroundColor: messagePrimaryColor,
-              messageTextStyle: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-            messageInputTheme: const StreamMessageInputThemeData(
-                sendButtonColor: messagePrimaryColor,
-                expandButtonColor: messagePrimaryColor,
-                actionButtonColor: messagePrimaryColor,
-                inputDecoration: InputDecoration(
-                  hintText: 'Type a message',
-                )
-            ),
-          ),
-          child: widget,
-        );
+            builder: (context, widget) {
+              return StreamChat(
+                client: client,
+                streamChatThemeData: StreamChatThemeData(
+                  colorTheme: StreamColorTheme.dark(),
+                  textTheme: StreamTextTheme.dark(),
+                  channelHeaderTheme: const StreamChannelHeaderThemeData(
+                    titleStyle: TextStyle(
+                      color: Colors.white,
+                    ),
+                    subtitleStyle: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  ownMessageTheme: const StreamMessageThemeData(
+                    messageBackgroundColor: messagePrimaryColor,
+                    messageTextStyle: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  messageInputTheme: const StreamMessageInputThemeData(
+                      sendButtonColor: messagePrimaryColor,
+                      expandButtonColor: messagePrimaryColor,
+                      actionButtonColor: messagePrimaryColor,
+                      inputDecoration: InputDecoration(
+                        hintText: 'Type a message',
+                      )
+                  ),
+                ),
+                child: widget,
+              );
+            },
+            home: ChannelListPage(client: client),
+          );
+
+        }
       },
-      home: ChannelListPage(client: _client),
     );
   }
 }
