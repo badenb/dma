@@ -5,7 +5,7 @@ Future<StreamChatClient> setupStreamChat() async {
   const streamApiSecret = '';
   const userId = 'UUID1';
   const username = 'John Doe';
-  const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVVVJRDEiLCJleHAiOjE3MTU2OTMwNzB9.mN7dIYlbjnVjZ2szbu4mnAieO-fv-0k6LMQebs4vmbE';
+  const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVVVJRDEifQ.PmhKXkU9_A8Wsl58BcParVmykZNV2sUv9ysYKuOc6Ec';
   const theOtherGuy = {
     'id': 'UUID2',
     'name': 'Bobby Tables',
