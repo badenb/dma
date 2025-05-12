@@ -2,6 +2,7 @@ import 'package:dma/pages/channel_list_page.dart';
 import 'package:dma/setup/stream_chat_setup.dart';
 import 'package:flutter/material.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
+import 'package:auth0_flutter/auth0_flutter.dart';
 
 const backgroundColor = Color(0xff121416);
 const messagePrimaryColor = Colors.blueAccent;
@@ -16,10 +17,14 @@ class DmApp extends StatefulWidget {
 class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
   late Future<StreamChatClient> _clientFuture;
 
+  late Auth0 auth0;
+  late Credentials credentials;
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    auth0 = Auth0("dev-gmtdctal4lxr7i3j.us.auth0.com", "L5aPLJRptTzTQplbka3zJsjijPEZO9QT");
     _clientFuture = _initializeStreamChat();
   }
 
@@ -30,7 +35,7 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
   }
 
   Future<StreamChatClient> _initializeStreamChat() async {
-    return await setupStreamChat();
+    return await setupStreamChat(auth0);
   }
 
   @override

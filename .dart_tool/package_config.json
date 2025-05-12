@@ -44,6 +44,18 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "auth0_flutter",
+      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/auth0_flutter-1.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "auth0_flutter_platform_interface",
+      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/auth0_flutter_platform_interface-1.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1",
       "packageUri": "lib/",
@@ -51,7 +63,7 @@
     },
     {
       "name": "cached_network_image",
-      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/cached_network_image-3.4.0",
+      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/cached_network_image-3.4.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -63,7 +75,7 @@
     },
     {
       "name": "cached_network_image_web",
-      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/cached_network_image_web-1.3.0",
+      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/cached_network_image_web-1.3.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -330,6 +342,18 @@
       "rootUri": "file:///Users/baden.bennett/code/flutter-dev/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.3"
+    },
+    {
+      "name": "flutter_web_auth_2",
+      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/flutter_web_auth_2-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_web_auth_2_platform_interface",
+      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/flutter_web_auth_2_platform_interface-2.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "flutter_web_plugins",
@@ -663,9 +687,9 @@
     },
     {
       "name": "share_plus",
-      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/share_plus-8.0.3",
+      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/share_plus-7.2.2",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "2.18"
     },
     {
       "name": "share_plus_platform_interface",
@@ -741,9 +765,9 @@
     },
     {
       "name": "stream_chat",
-      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/stream_chat-7.3.0",
+      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/stream_chat-7.2.2",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.1"
     },
     {
       "name": "stream_chat_flutter",
@@ -753,9 +777,9 @@
     },
     {
       "name": "stream_chat_flutter_core",
-      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/stream_chat_flutter_core-7.3.0",
+      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/stream_chat_flutter_core-7.2.2",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.1"
     },
     {
       "name": "string_scanner",
@@ -921,7 +945,7 @@
     },
     {
       "name": "video_thumbnail",
-      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/video_thumbnail-0.5.3",
+      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/video_thumbnail-0.5.5",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
@@ -945,21 +969,27 @@
     },
     {
       "name": "web",
-      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/web-0.5.1",
+      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/web-1.1.1",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.4"
     },
     {
       "name": "web_socket_channel",
-      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/web_socket_channel-2.4.5",
+      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/web_socket_channel-2.4.0",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "2.15"
     },
     {
       "name": "win32",
       "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/win32-5.10.1",
       "packageUri": "lib/",
       "languageVersion": "3.5"
+    },
+    {
+      "name": "window_to_front",
+      "rootUri": "file:///Users/baden.bennett/.pub-cache/hosted/pub.dev/window_to_front-0.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "x509",
@@ -986,7 +1016,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2025-05-08T19:55:01.850307Z",
+  "generated": "2025-05-12T19:30:18.217488Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/baden.bennett/code/flutter-dev/flutter",
