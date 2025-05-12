@@ -1,6 +1,16 @@
-// Copyright 2013 The Flutter Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
+#endif
 
-#import <Foundation/Foundation.h>
-#import <file_selector_ios/FFSFileSelectorPlugin.h>
+
+FOUNDATION_EXPORT double file_selector_iosVersionNumber;
+FOUNDATION_EXPORT const unsigned char file_selector_iosVersionString[];
+

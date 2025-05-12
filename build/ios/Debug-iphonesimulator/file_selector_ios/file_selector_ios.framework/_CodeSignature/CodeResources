@@ -4,33 +4,57 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/FFSFileSelectorPlugin.h</key>
+		<key>Headers/file_selector_ios-Swift.h</key>
 		<data>
-		/NruvU4ILgd0rnPZ+Y1qC9dJhoc=
-		</data>
-		<key>Headers/FFSFileSelectorPlugin_Test.h</key>
-		<data>
-		wkCIqfLWJfdUOPoWs5A8FXPtNhc=
+		BRI17vlKHgLH+OjhSaQQ56nk3MA=
 		</data>
 		<key>Headers/file_selector_ios-umbrella.h</key>
 		<data>
-		C8MDMU860ExsTpEZbjcFYGYvXaQ=
-		</data>
-		<key>Headers/messages.g.h</key>
-		<data>
-		eL1slSZl/ca9toJG4sq5h54b8B8=
+		7OC1fifckEzrhBiWJHaze/f8mTM=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		16AP8kXNZvp5EudB2JEH7Me3wnA=
+		uL2uqty95xP4AKIXPT+W/DDF1oA=
+		</data>
+		<key>Modules/file_selector_ios.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
+		<data>
+		RQidJ5cjSMFLLlCB9CNRB6Th8bY=
+		</data>
+		<key>Modules/file_selector_ios.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
+		<data>
+		TrQsmBIeSA1NSzWoUMsS87Z267Y=
+		</data>
+		<key>Modules/file_selector_ios.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<data>
+		gcwBsH4BgyFY4sVtNt+/xOKS3vY=
+		</data>
+		<key>Modules/file_selector_ios.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<data>
+		MXWn3H+VPEFh0FSUf8aVRrb35+8=
+		</data>
+		<key>Modules/file_selector_ios.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<data>
+		DVYUzfihBhtfYb7RJui3xEkZEk0=
+		</data>
+		<key>Modules/file_selector_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<data>
+		gcwBsH4BgyFY4sVtNt+/xOKS3vY=
+		</data>
+		<key>Modules/file_selector_ios.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
+		<data>
+		O7jX92IaCrLY9WxZUyjYPJbAIng=
+		</data>
+		<key>Modules/file_selector_ios.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
+		<data>
+		X+wC/ib4sTwJQt1l2I/yPRUhqZo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		5P8vdasZ7KoBkH7We5yLA4ZYssg=
+		7jVZwAl2nifO8ilaLBDRUh/ZrEw=
 		</data>
 		<key>file_selector_ios_privacy.bundle/Info.plist</key>
 		<data>
-		TRJpmalVT2S9SDWxFtWnAGfdLpE=
+		PxWB8ekRoOCZTdQGOAowXxIH+8Q=
 		</data>
 		<key>file_selector_ios_privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -39,46 +63,88 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/FFSFileSelectorPlugin.h</key>
+		<key>Headers/file_selector_ios-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			d33xZBIVeaHl51peL63yn7YbIuD6nfCm7IKRHXrZPFA=
-			</data>
-		</dict>
-		<key>Headers/FFSFileSelectorPlugin_Test.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			dLvFvHTNAmECqeo7JU+Yw7pkYDnzAIe1pu31t+HmUPY=
+			OcUpVhpc0tXVqOW6hOR9VKPtrcx/BWny4a1YeifrONE=
 			</data>
 		</dict>
 		<key>Headers/file_selector_ios-umbrella.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			81NSraGTxNstUBUFAw6DnoC1BkicJWnLany7fTnJd8M=
+			N7DyMg9cyQuhRFcbTfJ1KF+nFSF0wk9LM/yRRfvVteE=
 			</data>
 		</dict>
-		<key>Headers/messages.g.h</key>
+		<key>Modules/file_selector_ios.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hu4X9H006Xx4G7zxPVRjEQLZLT0NKVMpikwWdd9GyYo=
+			metSFpmTGnp80bIuUXBEAq5CYmO3fFM/qoMS121Ntv4=
+			</data>
+		</dict>
+		<key>Modules/file_selector_ios.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			n5h0WmwtjYK6HuiQDQSI3SypqBF0fcW8ExE8V3Rnk+s=
+			</data>
+		</dict>
+		<key>Modules/file_selector_ios.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Qnesa0n4URGWAopawg9bGx36dUwkYV00BoCJ8LFzlyg=
+			</data>
+		</dict>
+		<key>Modules/file_selector_ios.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			w1o2VYDpKImN9GSAtG5YqQqqhfIVKhC5xTHw186Nqwo=
+			</data>
+		</dict>
+		<key>Modules/file_selector_ios.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IX1GrnlgL6ZK6Dc01jI/jIpJY6ppQzXIiotHXn1Jwds=
+			</data>
+		</dict>
+		<key>Modules/file_selector_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Qnesa0n4URGWAopawg9bGx36dUwkYV00BoCJ8LFzlyg=
+			</data>
+		</dict>
+		<key>Modules/file_selector_ios.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			iiX3lzWFPbhksf7WRUhzl2IMbRriNLmxYPckMjWWR7s=
+			</data>
+		</dict>
+		<key>Modules/file_selector_ios.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4RivcwmDH9rjKDto+COrENd87B92ddERZOLHXwrvYnU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			u235Y0vstCQ2s3139c3TuXIZzJ+V+qJAec7mVa4hLRk=
+			1Soz7b9UyhVj7hjQu+88IIdcoTc4/lYcpPi0rh8L/k0=
 			</data>
 		</dict>
 		<key>file_selector_ios_privacy.bundle/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			v1GjSjYpvR24VeIUctbQ1U8mjNPX28gewkH1Ft+yJns=
+			8gs7E5qXaNviEeMZM8FbA3mVMHXpH9SMfBr6ZCMZiYE=
 			</data>
 		</dict>
 		<key>file_selector_ios_privacy.bundle/PrivacyInfo.xcprivacy</key>

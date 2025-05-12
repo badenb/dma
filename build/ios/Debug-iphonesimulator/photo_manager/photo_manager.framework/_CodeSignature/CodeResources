@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/PHAsset+PM_COMMON.h</key>
 		<data>
-		mw6Mj/XTPXZriCdzYA9C2UyQ9eM=
+		h72ySBTZ0+IniDUOlprp6SYQBbU=
 		</data>
 		<key>Headers/PHAssetCollection+PM_COMMON.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/PHAssetResource+PM_COMMON.h</key>
 		<data>
-		8vFN9PThPJ9xG7t0yf4lq6GkXxk=
+		O6XHyZ2Bm8Jk8KLuO75sJYz5q2k=
 		</data>
 		<key>Headers/PMAssetPathEntity.h</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/PMConvertUtils.h</key>
 		<data>
-		hZcEV3oyVba/wuNIqO1evCS7I4c=
+		Uneryinl4D7hxKrgIYl8xS2jV84=
 		</data>
 		<key>Headers/PMConverter.h</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Headers/PMFilterOption.h</key>
 		<data>
-		sHTbfkN8HnYNVDX93GhEQYMjQzM=
+		J4jzhZsDRy3dUY1LKPEr0SElROs=
 		</data>
 		<key>Headers/PMFolderUtils.h</key>
 		<data>
@@ -78,11 +78,11 @@
 		</data>
 		<key>Headers/PMManager.h</key>
 		<data>
-		sPdahIoxnPVJ99+wh4gk9rvm1b4=
+		07+FBDnI+R3LeDBr4r4lmFcer/w=
 		</data>
 		<key>Headers/PMNotificationManager.h</key>
 		<data>
-		mMJiblzV1vwrxvXSzcJH5AC+C0w=
+		TULyiIu5Eo6e+RoESM+fW5HOAYA=
 		</data>
 		<key>Headers/PMPathFilterOption.h</key>
 		<data>
@@ -94,11 +94,11 @@
 		</data>
 		<key>Headers/PMProgressHandler.h</key>
 		<data>
-		c+2Wl4jwo3Q/d5JOLhgiZACK0Kc=
+		BZHUGr/z5E2RPqwapacicW31Uj8=
 		</data>
 		<key>Headers/PMProgressHandlerProtocol.h</key>
 		<data>
-		l6amaorcQmZSVnVwHPHOBcCBWmY=
+		wcD8eaJAssrKc3EGhe7bYG6i39Y=
 		</data>
 		<key>Headers/PMRequestTypeUtils.h</key>
 		<data>
@@ -106,15 +106,11 @@
 		</data>
 		<key>Headers/PMResultHandler.h</key>
 		<data>
-		HrvgEFatXeeMyaV5EIicyDEDnVg=
+		u5YhoAlGa4IrgHJ0yE9wacTrxrQ=
 		</data>
 		<key>Headers/PMThumbLoadOption.h</key>
 		<data>
 		ojVENT6kaMK5lV0ggd8sSeqhxDg=
-		</data>
-		<key>Headers/PhotoChangeObserver.h</key>
-		<data>
-		/n3NHA1omQrdawC+IaJagopkkq8=
 		</data>
 		<key>Headers/PhotoManagerPlugin.h</key>
 		<data>
@@ -130,11 +126,11 @@
 		</data>
 		<key>Headers/photo_manager-umbrella.h</key>
 		<data>
-		fjyJL4+ni9rYjXp0zML6xWcRseg=
+		zbOiC0+KDxm83Q2ja/WWJHqdLpM=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mPM456BD1ggenmppjTLNztzamw8=
+		C8z48xOWdnlv+wZb4b4PsuPAnrU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -142,11 +138,11 @@
 		</data>
 		<key>photo_manager_privacy.bundle/Info.plist</key>
 		<data>
-		mD0JfPDrbB79FCgy4tjmh0E0ePs=
+		IIO6d9w3N8iESpeaFo6KQw/rk3o=
 		</data>
 		<key>photo_manager_privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
-		jItvg4AZ3QMN+x7ZsZPsH1/9o4M=
+		ovI7plpMM3wD7Xf4C7cf7Ywfors=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -169,7 +165,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fCmXleY1clQ2ixbrzpyjkqOrG026AzAq+/H6qkYw4kM=
+			HkRistJamLY3XdZ9r9yFz2OLMFuEBoKirZCjbPzYstY=
 			</data>
 		</dict>
 		<key>Headers/PHAssetCollection+PM_COMMON.h</key>
@@ -183,7 +179,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nb1qrKHoQqV8HAcglItgHQGUA13E27Q7UICwF1JrxTU=
+			eJACtNI81OqFVNDgXsXLjq0+HRXX2oVTt3Ur6j4/IWs=
 			</data>
 		</dict>
 		<key>Headers/PMAssetPathEntity.h</key>
@@ -218,7 +214,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			a9jBO3A/SkRoBNxGVeVJFnPytUH1DqywlDJ2+V5VSkE=
+			S2hs/VFkvsIGnHSbE/2Of0iJ9OLCSpJYvkMhaPu9pnk=
 			</data>
 		</dict>
 		<key>Headers/PMConverter.h</key>
@@ -239,7 +235,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pchGfEZnQVXOmC6C8RXxd/LJ2dfOgeThRuM0lod8pj4=
+			M2drpATCic1ocMQ1Eb4siXmICtKcSNgXNwSxoHtKK7c=
 			</data>
 		</dict>
 		<key>Headers/PMFolderUtils.h</key>
@@ -281,14 +277,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dwqyUrmcdHHJ9rZBORVb5nrsM363SeUW6v5eOYZWZzY=
+			NplHXFdhjll9hoDHFKda53xjkabdeEwd1pysEf/uUIw=
 			</data>
 		</dict>
 		<key>Headers/PMNotificationManager.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pThyYbo2rbCLRyBUIIVLOJzttyW5PF12HZ5YnPI/P7g=
+			AQG4GpPJ4VD9ibfzPHnifYgpDLR8AL+lXp2KTkg/kAw=
 			</data>
 		</dict>
 		<key>Headers/PMPathFilterOption.h</key>
@@ -309,14 +305,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			m2JWFs15TTSLUBKoUqo7e887cEWyQOwh8MAz0RW0qQ0=
+			Ru2OJXCQDeBHfFu9LcBy50L9hKoFzh7c/6L+BpfZBjA=
 			</data>
 		</dict>
 		<key>Headers/PMProgressHandlerProtocol.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dcjVO1j8YJkvYmbx+I+6HElcYtDj8z+3UEuRNuyg2gU=
+			bLreLPgbTR8/96e4TDlK6wFLVsSRvtm4c3iwCf6reAM=
 			</data>
 		</dict>
 		<key>Headers/PMRequestTypeUtils.h</key>
@@ -330,7 +326,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XcntExBn6SaVlb1KzX8HLM5mYXRJ4PBZfM1E/L7zxWI=
+			CO/hnvQgk+DmfnjyHfmAoN5BaZGWu2SnUumzwMWpeWw=
 			</data>
 		</dict>
 		<key>Headers/PMThumbLoadOption.h</key>
@@ -338,13 +334,6 @@
 			<key>hash2</key>
 			<data>
 			hLeG2yrXOnjK9ZBfoSC+YZ6VA58jCJ1h61slsFCg1TA=
-			</data>
-		</dict>
-		<key>Headers/PhotoChangeObserver.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			S0zwdvt9qccVcMlPZtn77ku0yd/cQUAwZMge0QgSR1I=
 			</data>
 		</dict>
 		<key>Headers/PhotoManagerPlugin.h</key>
@@ -372,7 +361,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hrxkCAEJbFBRQ0emVs42wCns2ESg0ARYjM+JLbAvx4U=
+			Qv9kdfZQpSX42bRNbuSJJXV/wDBsnVfz+jrJmFWCI9Y=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -386,14 +375,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pzDm4rfVZ+9dRmX57niBh0n/JmMuYlUgDc0fkK4lpII=
+			oAYa33j1/M77eCmmGO8B7GBY+2LtXTHzPR/QyYL2j9Q=
 			</data>
 		</dict>
 		<key>photo_manager_privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RkoVd3S6ZyTqV9IXZtulvDBJk2F9TQqNNnSOhjx/6rA=
+			nHkMRSCmYmx+2I8qaBdh6fSJ9jWYuZVkBfaUlJe+RRg=
 			</data>
 		</dict>
 	</dict>

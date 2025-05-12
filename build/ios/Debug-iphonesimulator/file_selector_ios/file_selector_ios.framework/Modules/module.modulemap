@@ -3,8 +3,9 @@ framework module file_selector_ios {
 
   export *
   module * { export * }
+}
 
-  explicit module Test {
-    header "FFSFileSelectorPlugin_Test.h"
-  }
+module file_selector_ios.Swift {
+  header "file_selector_ios-Swift.h"
+  requires objc
 }

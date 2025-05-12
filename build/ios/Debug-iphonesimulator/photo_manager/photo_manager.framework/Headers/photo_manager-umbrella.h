@@ -33,7 +33,6 @@
 #import "PMResultHandler.h"
 #import "PMThumbLoadOption.h"
 #import "Reply.h"
-#import "PhotoChangeObserver.h"
 #import "PhotoManagerPlugin.h"
 #import "PMConverter.h"
 #import "PMImport.h"

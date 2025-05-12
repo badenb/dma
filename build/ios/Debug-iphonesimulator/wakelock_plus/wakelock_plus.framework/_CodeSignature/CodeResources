@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/messages.g.h</key>
 		<data>
-		RSpWsVrmNzUIVkwpEGqFh5+ELXk=
+		D0QfNA7ZOAymczmiu1H3JprmLB4=
 		</data>
 		<key>Headers/wakelock_plus-umbrella.h</key>
 		<data>
@@ -22,17 +22,17 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		pT0GxOs9t1WXda4JGfmLW9TIOK0=
+		zLdX2zo1xKVmJwPhjz8n4Zk7AWA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		JScamNczBp1Ky08bwTRjCRzLoRc=
 		</data>
-		<key>thermal.bundle/Info.plist</key>
+		<key>wakelock_plus_privacy.bundle/Info.plist</key>
 		<data>
-		RHXUkIU/OlKc5c7i3QMj3RSGyho=
+		x57vMK0JLYgc1ZYb8AYCQ6uOFUg=
 		</data>
-		<key>thermal.bundle/PrivacyInfo.xcprivacy</key>
+		<key>wakelock_plus_privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
 		/LX0ZlwxwIAIhjZaDB8EiH5KpXA=
 		</data>
@@ -57,7 +57,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DXXaQtBu9gHx0M3WaRO1TajL9n+cPsYYy8dVH9jcrcg=
+			iLj8IhcTxfU5LonDeoyJubX4XQ+6utC6bjyrClsROeE=
 			</data>
 		</dict>
 		<key>Headers/wakelock_plus-umbrella.h</key>
@@ -74,14 +74,14 @@
 			3qjNiub65h6XizhwhZ9k38mARyYF7XZ7tzou8qAV80M=
 			</data>
 		</dict>
-		<key>thermal.bundle/Info.plist</key>
+		<key>wakelock_plus_privacy.bundle/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sFk3iBFdqYxSmavAjImH7pNE3pw870gFbs0Zai9LRUg=
+			1IIpNHQwiVKbEkeoV4Av/j93rd+kcLMAR+bdPreRJ0g=
 			</data>
 		</dict>
-		<key>thermal.bundle/PrivacyInfo.xcprivacy</key>
+		<key>wakelock_plus_privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<dict>
 			<key>hash2</key>
 			<data>

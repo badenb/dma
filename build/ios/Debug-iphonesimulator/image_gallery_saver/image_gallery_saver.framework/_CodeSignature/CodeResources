@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/image_gallery_saver-Swift.h</key>
 		<data>
-		lBekohMKcvBWcTIrvSa+UvFmWdQ=
+		s7Kb0erbBMTCJoOeKVRVURkA9TU=
 		</data>
 		<key>Headers/image_gallery_saver-umbrella.h</key>
 		<data>
@@ -18,39 +18,39 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		+98pvwPHvt0mNJU67edAVtuv4fw=
+		GAhMNX+MIrbGPvj745mKb2yZKWk=
 		</data>
 		<key>Modules/image_gallery_saver.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		JJNrinR2itRtzCRDHbvinotexe0=
+		/+2NbZzhWu7mQ2jMx1YN3O9exf0=
 		</data>
 		<key>Modules/image_gallery_saver.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		e+0FbT9abSjzlXTkzOc4zL2VhOk=
+		t/RAiLCAVgd5g0dBFaZYD0+H3BQ=
 		</data>
 		<key>Modules/image_gallery_saver.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		FSPnLbho3G+LL9smI3XgVOqBIQ4=
+		gcwBsH4BgyFY4sVtNt+/xOKS3vY=
 		</data>
 		<key>Modules/image_gallery_saver.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		v9gLfBIGye/6Y3rVzE16KrWB84U=
+		RST4ZtUxX/vReWdL2llqjOS2DbA=
 		</data>
 		<key>Modules/image_gallery_saver.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		jkXm6/CfHosDT7HW53xevkUm+LA=
+		w8SoHR8YPfAj1GTfaY1JlNe60kE=
 		</data>
 		<key>Modules/image_gallery_saver.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		FSPnLbho3G+LL9smI3XgVOqBIQ4=
+		gcwBsH4BgyFY4sVtNt+/xOKS3vY=
 		</data>
 		<key>Modules/image_gallery_saver.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		vTa5QYtrIDJo7GWCa/1BsjFYmJ0=
+		Jp4C2dl81qM1wVF5N3hvUMBG7xQ=
 		</data>
 		<key>Modules/image_gallery_saver.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		a2bB/+wSukHV4/ej2e6YFv6qRAo=
+		b6DyJvpnEh0EdiR2eqSpVa3O5I0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,7 +70,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Fskf1/dal09ZB4PJBNF3oY8bGy2zvHEy2Z4bzlLeczk=
+			uMN6CWju4X+KmNE0zKmfmE43gjW0u0amVk4MMOWhL5s=
 			</data>
 		</dict>
 		<key>Headers/image_gallery_saver-umbrella.h</key>
@@ -84,56 +84,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3Fol4F/uNkBS0tJ1rGGBjHY+7f4kSppXiqJS8qQL1OU=
+			nunfZkhEGNKXuRmY3xsOmNftPk06eaBkb9GspJmdNr0=
 			</data>
 		</dict>
 		<key>Modules/image_gallery_saver.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OB1C33uNtt4jejNMmbH5QD6p/P3RkVJLZ4n9jam/LhI=
+			CRqerDzXBD6+FL7qcHltFbFgaXIMYL+cXE02cUYEXs8=
 			</data>
 		</dict>
 		<key>Modules/image_gallery_saver.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KnRdWE4y6t4QM5zi5JDptPdHFgJy1Tku+7GLkZS2aNM=
+			Qnesa0n4URGWAopawg9bGx36dUwkYV00BoCJ8LFzlyg=
 			</data>
 		</dict>
 		<key>Modules/image_gallery_saver.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3/f7ElbQQZM8EFoRBVHdY7FRHIZnh5XVnLmVanEHABU=
+			aOUHnkWmg7TEdPyYgerbw5bEi/qHv7KFyTGJrXQaCgU=
 			</data>
 		</dict>
 		<key>Modules/image_gallery_saver.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			m8GetaNAyQJNR02tn89hnVNffROzregB6Z0bB47fRnk=
+			+8R/om6IFGjkS8XZYM9hqnvp2mZmlebo+IwlA6/xQlU=
 			</data>
 		</dict>
 		<key>Modules/image_gallery_saver.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KnRdWE4y6t4QM5zi5JDptPdHFgJy1Tku+7GLkZS2aNM=
+			Qnesa0n4URGWAopawg9bGx36dUwkYV00BoCJ8LFzlyg=
 			</data>
 		</dict>
 		<key>Modules/image_gallery_saver.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rmTLdykqdYpu4isnVHt8MwUJt1Eh10R/fmigYYFbKy0=
+			G79xIFFYBaGXRgIybWWXsnpB52D9unx9ENUZoD03E94=
 			</data>
 		</dict>
 		<key>Modules/image_gallery_saver.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			D88O2SxyVhytH5e4CMm4AGZg0DG9/bSo6cM7kh9Iksc=
+			O11qcWKIXTzcF0W0lF9e6Fxet7yfUj/HmgVhJwKI1SU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

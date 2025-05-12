@@ -17,11 +17,13 @@ typedef void (^ChangeIds)(NSArray<NSString *> *);
 #import "PMResultHandler.h"
 #import "PMConvertProtocol.h"
 
-#define PM_VIDEO_CACHE_PATH @".video"
 #define PM_IMAGE_CACHE_PATH @".image"
+#define PM_VIDEO_CACHE_PATH @".video"
+#define PM_AUDIO_CACHE_PATH @".audio"
+#define PM_OTHER_CACHE_PATH @".other"
 #define PM_FULL_IMAGE_CACHE_PATH @"flutter-images"
 
-typedef void (^AssetResult)(PMAssetEntity *);
+typedef void (^AssetBlockResult)(PMAssetEntity *, NSObject *);
 
 
 @interface PMManager : NSObject
@@ -44,59 +46,80 @@ typedef void (^AssetResult)(PMAssetEntity *);
 
 - (void)clearCache;
 
-- (void)getThumbWithId:(NSString *)id option:(PMThumbLoadOption *)option resultHandler:(NSObject <PMResultHandler> *)handler progressHandler:(NSObject <PMProgressHandlerProtocol> *)progressHandler;
+- (void)getThumbWithId:(NSString *)assetId option:(PMThumbLoadOption *)option resultHandler:(NSObject <PMResultHandler> *)handler progressHandler:(NSObject <PMProgressHandlerProtocol> *)progressHandler;
 
-- (void)getFullSizeFileWithId:(NSString *)id isOrigin:(BOOL)isOrigin subtype:(int)subtype resultHandler:(NSObject <PMResultHandler> *)handler progressHandler:(NSObject <PMProgressHandlerProtocol> *)progressHandler;
+- (void)getFullSizeFileWithId:(NSString *)assetId
+                     isOrigin:(BOOL)isOrigin
+                      subtype:(int)subtype
+                     fileType:(AVFileType)fileType
+                resultHandler:(NSObject <PMResultHandler> *)handler
+              progressHandler:(NSObject <PMProgressHandlerProtocol> *)progressHandler;
 
 - (PMAssetPathEntity *)fetchPathProperties:(NSString *)id type:(int)type filterOption:(NSObject<PMBaseFilter> *)filterOption;
 
 - (void)deleteWithIds:(NSArray<NSString *> *)ids changedBlock:(ChangeIds)block;
 
 - (void)saveImage:(NSData *)data
-            title:(NSString *)title
+            filename:(NSString *)filename
             desc:(NSString *)desc
-            block:(AssetResult)block;
+            block:(AssetBlockResult)block;
+
+- (void)saveImageWithPath:(NSString *)path
+            filename:(NSString *)filename
+            desc:(NSString *)desc
+            block:(AssetBlockResult)block;
 
 - (void)saveVideo:(NSString *)path
-            title:(NSString *)title
+            filename:(NSString *)filename
             desc:(NSString *)desc
-            block:(AssetResult)block;
+            block:(AssetBlockResult)block;
 
 - (void)saveLivePhoto:(NSString *)imagePath
             videoPath:(NSString *)videoPath
             title:(NSString *)title
             desc:(NSString *)desc
-            block:(AssetResult)block;
+            block:(AssetBlockResult)block;
 
 - (BOOL)existsWithId:(NSString *)assetId;
 
-- (BOOL)entityIsLocallyAvailable:(NSString *)assetId resource:(PHAssetResource *)resource isOrigin:(BOOL)isOrigin;
+- (BOOL)entityIsLocallyAvailable:(NSString *)assetId
+                        resource:(PHAssetResource *)resource
+                        isOrigin:(BOOL)isOrigin
+                         subtype:(int)subtype
+                        fileType:(AVFileType)fileType;
 
-- (NSString*)getTitleAsyncWithAssetId:(NSString *)assetId subtype:(int)subtype;
+- (void)getDurationWithOptions:(NSString *)assetId
+                       subtype:(int)subtype
+                 resultHandler:(NSObject <PMResultHandler> *)handler;
+
+- (NSString*)getTitleAsyncWithAssetId:(NSString *)assetId
+                              subtype:(int)subtype
+                             isOrigin:(BOOL)isOrigin
+                             fileType:(AVFileType)fileType;
 
 - (NSString*)getMimeTypeAsyncWithAssetId: (NSString *) assetId;
 
-- (void)getMediaUrl:(NSString *)assetId resultHandler:(NSObject <PMResultHandler> *)handler;
+- (void)getMediaUrl:(NSString *)assetId
+      resultHandler:(NSObject <PMResultHandler> *)handler
+    progressHandler:(NSObject <PMProgressHandlerProtocol> *)progressHandler;
 
 - (NSArray<PMAssetPathEntity *> *)getSubPathWithId:(NSString *)id type:(int)type albumType:(int)albumType option:(NSObject<PMBaseFilter> *)option;
 
-- (void)saveImageWithPath:(NSString *)path title:(NSString *)title desc:(NSString *)desc block:(void (^)(PMAssetEntity *))block;
+- (void)copyAssetWithId:(NSString *)id toGallery:(NSString *)gallery block:(AssetBlockResult)block;
 
-- (void)copyAssetWithId:(NSString *)id toGallery:(NSString *)gallery block:(void (^)(PMAssetEntity *entity, NSString *msg))block;
+- (void)createFolderWithName:(NSString *)name parentId:(NSString *)id block:(void (^)(NSString *newId, NSObject *error))block;
 
-- (void)createFolderWithName:(NSString *)name parentId:(NSString *)id block:(void (^)(NSString *, NSString *))block;
+- (void)createAlbumWithName:(NSString *)name parentId:(NSString *)id block:(void (^)(NSString *newId, NSObject *error))block;
 
-- (void)createAlbumWithName:(NSString *)name parentId:(NSString *)id block:(void (^)(NSString *, NSString *))block;
+- (void)removeInAlbumWithAssetId:(NSArray *)ids albumId:(NSString *)albumId block:(void (^)(NSObject *error))block;
 
-- (void)removeInAlbumWithAssetId:(NSArray *)id albumId:(NSString *)albumId block:(void (^)(NSString *))block;
+- (void)removeCollectionWithId:(NSString *)id type:(int)type block:(void (^)(NSObject *))block;
 
-- (void)removeCollectionWithId:(NSString *)id type:(int)type block:(void (^)(NSString *))block;
-
-- (BOOL)favoriteWithId:(NSString *)id favorite:(BOOL)favorite;
+- (void)favoriteWithId:(NSString *)id favorite:(BOOL)favorite block:(void (^)(BOOL result, NSObject *))block;
 
 - (void)clearFileCache;
 
-- (void)requestCacheAssetsThumb:(NSArray *)identifiers option:(PMThumbLoadOption *)option;
+- (void)requestCacheAssetsThumb:(NSArray *)ids option:(PMThumbLoadOption *)option;
 
 - (void)cancelCacheRequests;
 
