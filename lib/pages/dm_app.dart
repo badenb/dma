@@ -25,6 +25,7 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     auth0 = Auth0("dev-gmtdctal4lxr7i3j.us.auth0.com", "L5aPLJRptTzTQplbka3zJsjijPEZO9QT");
+    print(auth0);
     _clientFuture = _initializeStreamChat();
   }
 
@@ -61,7 +62,31 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
               valueColor: AlwaysStoppedAnimation<Color>(messagePrimaryColor),
           ));
         } else {
+          
+          if (snapshot.hasError) {
+            return MaterialApp(
+              color: Colors.black,
+              home: Scaffold(
+                backgroundColor: backgroundColor,
+                body: Center(
+                  child: Text(
+                    'Error connecting to chat:\n${snapshot.error}',
+                    style: const TextStyle(color: Colors.white),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            );
+          }
+
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(messagePrimaryColor),
+            ));
+          }
+
           final client = snapshot.data!;
+
           return MaterialApp(
             color: Colors.black,
             theme: ThemeData(
