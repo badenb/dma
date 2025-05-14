@@ -46,6 +46,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.10.0
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -56,6 +58,13 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+flutter_icons:
+  # Path to your logo file:
+  image_path: "assets/images/yada_v1.png"
+  # Targets to generate for:
+  android: true
+  ios: true
 
 dependency_overrides:
   audio_video_progress_bar: ^2.0.2
