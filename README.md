@@ -1,4 +1,4 @@
-# dma
+# Yada-yada
 
 just a simple direct messaging app
 
