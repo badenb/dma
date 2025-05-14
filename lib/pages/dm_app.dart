@@ -19,6 +19,7 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
 
   late Auth0 auth0;
   late Credentials credentials;
+  late bool _loggedIn = false;
 
   @override
   void initState() {
@@ -37,6 +38,19 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
 
   Future<StreamChatClient> _initializeStreamChat() async {
     return await setupStreamChat(auth0);
+  }
+
+  Future<void> _logout() async {
+    try {
+      (await _clientFuture).disconnectUser();
+      await auth0.webAuthentication().logout();
+      await auth0.credentialsManager.clearCredentials();
+      setState(() {
+        _loggedIn = false;
+      });
+    } catch (e) {
+      print('Logout failed: $e');
+    }
   }
 
   @override
@@ -64,15 +78,30 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
         } else {
           
           if (snapshot.hasError) {
+            debugPrint('❌ StreamChat setup failed: ${snapshot.error}');
             return MaterialApp(
               color: Colors.black,
               home: Scaffold(
                 backgroundColor: backgroundColor,
                 body: Center(
-                  child: Text(
-                    'Error connecting to chat:\n${snapshot.error}',
-                    style: const TextStyle(color: Colors.white),
-                    textAlign: TextAlign.center,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Error connecting to chat:\n${snapshot.error}',
+                        style: const TextStyle(color: Colors.white),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 16),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            _clientFuture = _initializeStreamChat();
+                          });
+                        },
+                        child: const Text('Retry'),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -129,9 +158,8 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
                 child: widget,
               );
             },
-            home: ChannelListPage(client: client),
+            home: ChannelListPage(client: client, onLogout: _logout),
           );
-
         }
       },
     );

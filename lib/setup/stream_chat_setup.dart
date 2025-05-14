@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 import 'package:auth0_flutter/auth0_flutter.dart';
 
@@ -15,6 +16,8 @@ Future<StreamChatClient> setupStreamChat(Auth0 auth0) async {
 
   final userId = creds.user.sub.replaceAll('|', '_');
   final username = creds.user.name;
+
+  debugPrint('==========> User: ${creds.user.toMap()}');
 
   final client = StreamChatClient(streamApiKey, logLevel: Level.ALL);
   final userToken = client.devToken(userId).rawValue;
