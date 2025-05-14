@@ -39,6 +39,9 @@ dependencies:
   flutter_slidable: ^3.0.0
 #  stream_chat_flutter: ^7.2.0
   video_player: ^2.8.6
+  auth0_flutter: ^1.8.0
+
+  flutter_web_auth_2: ^2.1.0  # fallback for redirect handling
 
 dev_dependencies:
   flutter_test:

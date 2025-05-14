@@ -53,5 +53,14 @@
     <string>$(PRODUCT_NAME) uses the camera to take pictures to send in chat</string>
     <key>NSMicrophoneUsageDescription</key>
     <string>$(PRODUCT_NAME) uses the microphone to record audio to send in chat</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+	<dict>
+		<key>CFBundleURLSchemes</key>
+		<array>
+		<string>com.badenb.dma</string> <!-- your app's bundle ID -->
+		</array>
+	</dict>
+	</array>
 </dict>
 </plist>

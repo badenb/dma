@@ -2,6 +2,7 @@ import 'package:dma/pages/channel_list_page.dart';
 import 'package:dma/setup/stream_chat_setup.dart';
 import 'package:flutter/material.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
+import 'package:auth0_flutter/auth0_flutter.dart';
 
 const backgroundColor = Color(0xff121416);
 const messagePrimaryColor = Colors.blueAccent;
@@ -16,10 +17,16 @@ class DmApp extends StatefulWidget {
 class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
   late Future<StreamChatClient> _clientFuture;
 
+  late Auth0 auth0;
+  late Credentials credentials;
+  late bool _loggedIn = false;
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    auth0 = Auth0("dev-gmtdctal4lxr7i3j.us.auth0.com", "L5aPLJRptTzTQplbka3zJsjijPEZO9QT");
+    print(auth0);
     _clientFuture = _initializeStreamChat();
   }
 
@@ -30,7 +37,20 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
   }
 
   Future<StreamChatClient> _initializeStreamChat() async {
-    return await setupStreamChat();
+    return await setupStreamChat(auth0);
+  }
+
+  Future<void> _logout() async {
+    try {
+      (await _clientFuture).disconnectUser();
+      await auth0.webAuthentication().logout();
+      await auth0.credentialsManager.clearCredentials();
+      setState(() {
+        _loggedIn = false;
+      });
+    } catch (e) {
+      print('Logout failed: $e');
+    }
   }
 
   @override
@@ -56,7 +76,46 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
               valueColor: AlwaysStoppedAnimation<Color>(messagePrimaryColor),
           ));
         } else {
+          
+          if (snapshot.hasError) {
+            debugPrint('❌ StreamChat setup failed: ${snapshot.error}');
+            return MaterialApp(
+              color: Colors.black,
+              home: Scaffold(
+                backgroundColor: backgroundColor,
+                body: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Error connecting to chat:\n${snapshot.error}',
+                        style: const TextStyle(color: Colors.white),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 16),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            _clientFuture = _initializeStreamChat();
+                          });
+                        },
+                        child: const Text('Retry'),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }
+
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(messagePrimaryColor),
+            ));
+          }
+
           final client = snapshot.data!;
+
           return MaterialApp(
             color: Colors.black,
             theme: ThemeData(
@@ -99,9 +158,8 @@ class _DmAppState extends State<DmApp> with WidgetsBindingObserver {
                 child: widget,
               );
             },
-            home: ChannelListPage(client: client),
+            home: ChannelListPage(client: client, onLogout: _logout),
           );
-
         }
       },
     );

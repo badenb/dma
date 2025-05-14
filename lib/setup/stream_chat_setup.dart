@@ -1,36 +1,41 @@
+import 'package:flutter/foundation.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
+import 'package:auth0_flutter/auth0_flutter.dart';
 
-Future<StreamChatClient> setupStreamChat() async {
+Future<StreamChatClient> setupStreamChat(Auth0 auth0) async {
   const streamApiKey = 'uhfx452bn48j';
-  const streamApiSecret = '';
-  const userId = 'UUID1';
-  const username = 'John Doe';
-  const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVVVJRDEifQ.PmhKXkU9_A8Wsl58BcParVmykZNV2sUv9ysYKuOc6Ec';
-  const theOtherGuy = {
-    'id': 'UUID2',
-    'name': 'Bobby Tables',
-  };
 
-  final client = StreamChatClient(
-    streamApiKey,
-    logLevel: Level.ALL,
-  );
+  late Credentials creds;
 
-  final currentUser = User(id: userId, extraData: const {
+  try {
+    creds = await auth0.credentialsManager.credentials();
+  } catch (_) {
+    creds = await auth0.webAuthentication().login();
+    await auth0.credentialsManager.storeCredentials(creds);
+  }
+
+  final userId = creds.user.sub.replaceAll('|', '_');
+  final username = creds.user.name;
+
+  debugPrint('==========> User: ${creds.user.toMap()}');
+
+  final client = StreamChatClient(streamApiKey, logLevel: Level.ALL);
+  final userToken = client.devToken(userId).rawValue;
+
+  final currentUser = User(id: userId, extraData: {
     'name': username,
   });
 
-  await client.connectUser(
-    currentUser,
-    userToken,
-  );
-
-  final channel = client.channel('messaging', id: "private-chat-$userId-${theOtherGuy['id']}", extraData: {
-    'name': theOtherGuy['name'],
-  });
-
-  await channel.watch();
-  await channel.addMembers([userId]);
+  client.updateUser(currentUser);
+  
+  await client.connectUser(currentUser, userToken);
 
   return client;
 }
+
+
+  // final channel = client.channel('messaging', id: "private-chat-$userId-${theOtherGuy['id']}", extraData: {
+  //   'name': theOtherGuy['name'],
+  //   'members': [userId, theOtherGuy['id']],
+  // });
+  // await channel.watch();

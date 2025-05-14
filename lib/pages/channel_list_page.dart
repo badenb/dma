@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:dma/pages/channel_page.dart';
+import 'package:dma/pages/user_list_page.dart';
 
 class ChannelListPage extends StatefulWidget {
-  const ChannelListPage({ super.key, required this.client });
+  const ChannelListPage({ super.key, required this.client, required this.onLogout });
 
   final StreamChatClient client;
+  final Future<void> Function() onLogout;
 
   @override
   State<ChannelListPage> createState() => _ChannelListPageState();
@@ -41,6 +43,22 @@ class _ChannelListPageState extends State<ChannelListPage> {
             color: Colors.white,
           ),
         ),
+        actions: [
+          IconButton(
+              onPressed: () async {
+                await widget.onLogout();
+              },
+              icon: const Icon(Icons.logout, color: Colors.white)),
+          IconButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => UserListPage(client: widget.client),
+                  ),
+                ),
+                icon: const Icon(Icons.person_add)
+          )
+        ],
       ),
       body: SlidableAutoCloseBehavior(
         child: RefreshIndicator(
@@ -98,5 +116,4 @@ class _ChannelListPageState extends State<ChannelListPage> {
       ),
     );
   }
-
 }

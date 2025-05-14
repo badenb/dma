@@ -30,6 +30,8 @@ android {
     compileSdk flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
+    manifestPlaceholders += [auth0Domain: "dev-gmtdctal4lxr7i3j.us.auth0.com", auth0Scheme: "https"]
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

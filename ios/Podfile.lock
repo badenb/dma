@@ -1,4 +1,13 @@
 PODS:
+  - Auth0 (2.10.0):
+    - JWTDecode (= 3.2.0)
+    - SimpleKeychain (= 1.2.0)
+  - auth0_flutter (1.10.0):
+    - Auth0 (= 2.10.0)
+    - Flutter
+    - FlutterMacOS
+    - JWTDecode (= 3.2.0)
+    - SimpleKeychain (= 1.2.0)
   - connectivity_plus (0.0.1):
     - Flutter
     - ReachabilitySwift
@@ -39,10 +48,13 @@ PODS:
   - file_selector_ios (0.0.1):
     - Flutter
   - Flutter (1.0.0)
+  - flutter_web_auth_2 (1.1.1):
+    - Flutter
   - image_gallery_saver (2.0.2):
     - Flutter
   - image_picker_ios (0.0.1):
     - Flutter
+  - JWTDecode (3.2.0)
   - libwebp (1.5.0):
     - libwebp/demux (= 1.5.0)
     - libwebp/mux (= 1.5.0)
@@ -69,6 +81,7 @@ PODS:
   - SDWebImage/Core (5.21.0)
   - share_plus (0.0.1):
     - Flutter
+  - SimpleKeychain (1.2.0)
   - sqflite_darwin (0.0.4):
     - Flutter
     - FlutterMacOS
@@ -85,10 +98,12 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
+  - auth0_flutter (from `.symlinks/plugins/auth0_flutter/darwin`)
   - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
   - file_picker (from `.symlinks/plugins/file_picker/ios`)
   - file_selector_ios (from `.symlinks/plugins/file_selector_ios/ios`)
   - Flutter (from `Flutter`)
+  - flutter_web_auth_2 (from `.symlinks/plugins/flutter_web_auth_2/ios`)
   - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
@@ -103,14 +118,19 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Auth0
     - DKImagePickerController
     - DKPhotoGallery
+    - JWTDecode
     - libwebp
     - ReachabilitySwift
     - SDWebImage
+    - SimpleKeychain
     - SwiftyGif
 
 EXTERNAL SOURCES:
+  auth0_flutter:
+    :path: ".symlinks/plugins/auth0_flutter/darwin"
   connectivity_plus:
     :path: ".symlinks/plugins/connectivity_plus/ios"
   file_picker:
@@ -119,6 +139,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/file_selector_ios/ios"
   Flutter:
     :path: Flutter
+  flutter_web_auth_2:
+    :path: ".symlinks/plugins/flutter_web_auth_2/ios"
   image_gallery_saver:
     :path: ".symlinks/plugins/image_gallery_saver/ios"
   image_picker_ios:
@@ -143,21 +165,26 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/wakelock_plus/ios"
 
 SPEC CHECKSUMS:
+  Auth0: 2876d0c36857422eda9cb580a6cc896c7d14cb36
+  auth0_flutter: 5b921a0291e9cf364ffd473f7689156df88356b3
   connectivity_plus: 481668c94744c30c53b8895afb39159d1e619bdf
   DKImagePickerController: 946cec48c7873164274ecc4624d19e3da4c1ef3c
   DKPhotoGallery: b3834fecb755ee09a593d7c9e389d8b5d6deed60
   file_picker: 07c75322ede1d47ec9bb4ac82b27c94d3598251a
   file_selector_ios: f92e583d43608aebc2e4a18daac30b8902845502
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  flutter_web_auth_2: 154537f5bfb265e1309867b72e7724b4f32b2e2d
   image_gallery_saver: 14711d79da40581063e8842a11acf1969d781ed7
   image_picker_ios: 7fe1ff8e34c1790d6fff70a32484959f563a928a
+  JWTDecode: 7dae24cb9bf9b608eae61e5081029ec169bb5527
   libwebp: 02b23773aedb6ff1fd38cec7a77b81414c6842a8
   package_info_plus: af8e2ca6888548050f16fa2f1938db7b5a5df499
   path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
   photo_manager: d2fbcc0f2d82458700ee6256a15018210a81d413
   ReachabilitySwift: 32793e867593cfc1177f5d16491e3a197d2fccda
   SDWebImage: f84b0feeb08d2d11e6a9b843cb06d75ebf5b8868
-  share_plus: 011d6fb4f9d2576b83179a3a5c5e323202cdabcf
+  share_plus: de6030e33b4e106470e09322d87cf2a4258d2d1d
+  SimpleKeychain: 768cf43ae778b1c21816e94dddf01bb8ee96a075
   sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0
   SwiftyGif: 706c60cf65fa2bc5ee0313beece843c8eb8194d4
   url_launcher_ios: 694010445543906933d732453a59da0a173ae33d
@@ -165,6 +192,6 @@ SPEC CHECKSUMS:
   video_thumbnail: b637e0ad5f588ca9945f6e2c927f73a69a661140
   wakelock_plus: e29112ab3ef0b318e58cfa5c32326458be66b556
 
-PODFILE CHECKSUM: 819463e6a0290f5a72f145ba7cde16e8b6ef0796
+PODFILE CHECKSUM: 1959d098c91d8a792531a723c4a9d7e9f6a01e38
 
 COCOAPODS: 1.16.2

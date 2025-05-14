@@ -10,12 +10,15 @@ class ChannelPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: StreamChannelHeader(
-        title: Text(
-            channel.name.toString(),
-            style: const TextStyle(
+        onBackPressed: () {
+          Navigator.of(context).popUntil((route) => route.isFirst);
+        },
+        title: const Text(
+            "Chat",
+            style: TextStyle(
               color: Colors.white,
             )
-        ),
+        )
       ),
       body: Container (
         color: const Color(0xff121416),
