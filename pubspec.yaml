@@ -61,7 +61,7 @@ dev_dependencies:
 
 flutter_icons:
   # Path to your logo file:
-  image_path: "assets/images/yada_v2.png"
+  image_path: "assets/images/yada_v3.png"
   # Targets to generate for:
   android: true
   ios: true
